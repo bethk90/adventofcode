@@ -1,3 +1,9 @@
+'''
+This list represents the Calories of the food carried by the Elves:
+
+Find the Elf carrying the most Calories. How many total Calories is that Elf carrying?
+'''
+
 with open('dayone.txt', 'r') as f:
     elf_list = f.read().split('\n\n')
     calories = [sum([eval(i) for i in elf.split()]) for elf in elf_list]
