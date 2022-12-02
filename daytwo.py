@@ -10,14 +10,13 @@ Your play:
 X for Rock, Y for Paper, and Z for Scissors.
 '''
 
-scores_dict = {'X': 1, 'Y': 2, 'Z': 3}
-result_dict = {'A X': 3, 'A Y': 6, 'A Z': 0,
-               'B X': 0, 'B Y': 3, 'B Z': 6,
-               'C X': 6, 'C Y': 0, 'C Z': 3}
+scores_dict = {'A X': 4, 'A Y': 8, 'A Z': 3,
+               'B X': 1, 'B Y': 5, 'B Z': 9,
+               'C X': 7, 'C Y': 2, 'C Z': 6}
 
 with open('daytwo.txt', 'r') as f:
     move_list = f.read().split('\n')
-    scores = [scores_dict[move[2]] + result_dict[move] for move in move_list]
+    scores = [scores_dict[move] for move in move_list]
     total = sum(scores)
     print(f'Your total scores would be {total}')
     exit()
