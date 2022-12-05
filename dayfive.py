@@ -20,15 +20,15 @@ def rearrangement(file):
 
     for order in orders:
         order = order.split(' ')
-        amount, f, s = int(order[1]), int(order[3]) - 1, int(order[5]) - 1
-        instructions.append([amount,f,s])
+        a,b,c = int(order[1]), int(order[3]) - 1, int(order[5]) - 1
+        instructions.append([a,b,c])
 
     for instruction in instructions:
-        order_amount, order_first, order_second = instruction[0], instruction[1], instruction[2]
-        while order_amount > 0:
-            stack_list[order_second].insert(0, stack_list[order_first][0])
-            stack_list[order_first].remove(stack_list[order_first][0])
-            order_amount -= 1
+        amount, one, two = instruction[0], instruction[1], instruction[2]
+        while amount > 0:
+            stack_list[two].insert(0, stack_list[one][0])
+            stack_list[one].remove(stack_list[one][0])
+            amount -= 1
 
     top_of_the_stacks = [x[0] for x in stack_list]
 
