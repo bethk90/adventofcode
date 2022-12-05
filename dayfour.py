@@ -18,4 +18,3 @@ def find_overlap(text):
 
 
 print(find_overlap('dayfour.txt'))
-
